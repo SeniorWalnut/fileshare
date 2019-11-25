@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: ./Dockerfile
+    container_name: 'fileshare_nginx'
+    restart: 'no'
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes: 
+      - ../app:/var/www/html
+    # links:
+      # - php
+  php:
+    # image: php:7-fpm
+    build:
+      context: ./fpm
+      dockerfile: ./Dockerfile
+    ports:
+      - "9000:9000"
+    container_name: 'fileshare_php'
+    volumes:
+      - ../app/src:/var/www/html/src
+
+# db:
+  # container_name: 'fileshare_db'
