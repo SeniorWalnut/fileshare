@@ -23,7 +23,7 @@ services:
       - "9000:9000"
     container_name: 'fileshare_php'
     volumes:
-      - ../app/src:/var/www/html/src
+      - ../app:/var/www/html
 
 # db:
   # container_name: 'fileshare_db'
