@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="pure_styles/pure-min.css">
+  <link rel="stylesheet" href="pure_styles/menus.css">
+  <link rel="stylesheet" href="pure_styles/forms-min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header of the page with the brand name and 2 links  -->
+  <header id="header">
+    <div class="pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading">
+        Fileshare
+      </a>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a class="pure-menu-link" href="#">Sign in</a></li>
+        <li class="pure-menu-item"><a class="pure-menu-link" href="#">Sign up</a></li>
+      </ul>
+    </div>
+  </header>
+     <!-- End of header -->
+  <!-- Main body of filesharing -->
+
+  <main id="main" class="main">
+    <div class="main__wrapper">
+      <div class="main-load">
+        <div class="main-load__top">
+          <h1>Load your files here:</h1>
+          <!-- Action will be added next -->
+          <form method="POST" class="pure-form pure-form-stacked">
+            <div class="file">
+              <label class="file__label" for="filename">
+                <div class="file__heading">Change your file name:</div>
+                <input
+                  class="file__name"
+                  type="text"
+                  name="file__name"
+                  id="filename"
+                  placeholder="File name"
+                >
+              </label>
+              <label class="file__label" for="filefile">
+                <input
+                  type="file"
+                  class="file file__file"
+                  id="filefile"
+                  style="display: none"
+                >
+                <button 
+                  class="pure-button pure-button-secondary"
+                  onclick="this.previousElementSibling.click()" 
+                >Load file</button>
+              </label>
+              <label class="file__label" for="filedesc">
+                <div class="file__heading">Your file description:</div>
+                <textarea
+                  class="file__description"
+                  type="text"
+                  name="file__description"
+                  id="filedesc"
+                  placeholder="File Description"
+                >
+                </textarea>
+              </label>
+              <img
+                src="icons/delete.svg" 
+                class="file__delete"
+              >
+            </div>
+            <input
+              type="submit"
+              id="submit"
+              value="SUBMIT"
+              class="pure-button pure-button-primary"
+            >
+            <div class="add-file"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Main body of filesharing -->
+</body>
+</html>
